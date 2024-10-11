@@ -1,0 +1,159 @@
+/* Body Styling */
+body {
+  font-family: 'Montserrat', sans-serif; 
+  background: linear-gradient(to right, #ff7e5f, #feb47b); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: white;
+}
+
+/* Weather App Container */
+.weather-container {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 350px;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.5s ease; 
+}
+
+/* Keyframes for fadeIn effect */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Inputs and Buttons */
+input {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  width: 100%;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+input:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Button Styling */
+button {
+  padding: 10px 20px;
+  margin: 10px 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff6b6b; 
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; 
+}
+
+button:hover {
+  background-color: #ff4d4d; 
+  transform: scale(1.05); 
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4); 
+}
+
+/* Weather Display */
+#weather-display {
+  margin-top: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+#weather-display.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: slideIn 0.5s ease; 
+}
+
+/* Keyframes for slideIn effect */
+@keyframes slideIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Weather Elements */
+#temperature {
+  font-size: 2.5em;
+  margin: 10px 0;
+  animation: pulse 1.5s infinite; 
+}
+
+@keyframes pulse {
+  0%, 100% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.1);
+  }
+}
+
+#location {
+  font-size: 1.5em;
+  font-weight: bold;
+  animation: fadeInUp 0.5s ease; 
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+#description {
+  font-size: 1.2em;
+  text-transform: capitalize;
+  animation: fadeInUp 0.5s ease 0.2s; 
+}
+
+/* Weather Icon */
+#icon {
+  width: 100px;
+  height: 100px;
+  margin: 10px auto;
+  display: block;
+  transition: transform 0.3s ease;
+  animation: bounce 1.5s infinite; 
+}
+
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+}
+
+#icon:hover {
+  transform: rotate(360deg);
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
